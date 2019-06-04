@@ -1,0 +1,6 @@
+To do
+======
+Library for excel ops (get heart rate zones, weight, etc)
+Fix function sort weeks in sports lib
+
+Functions for app to gather gym data (row, run, cycle)

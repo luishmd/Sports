@@ -1,0 +1,3 @@
+To do
+======
+- Create library for filtering functions and checks for user inputs so that lib_sql behaves robustely (prevent adding a column name that already exists, etc)

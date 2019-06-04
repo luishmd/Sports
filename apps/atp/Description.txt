@@ -1,0 +1,49 @@
+===============
+*** ATP app ***
+===============
+
+Description
+-----------
+App that creates an annual training plan as well as suggests possible training sessions for a given week.
+This app is intended for the serious self-coached amateur athlete, who wants to improve his abilities.
+This app does not require the athlete to log in activities. It is not intended as a social network.
+
+
+Minimum requirements
+--------------------
+- Create ATP based on inputs and allow for logging of the number of hours trained
+- Have a training sessions database for run, bike, swim for different microcycles types (prep, base, build, peak, race)
+- Have some sort of log for the gym (bike: watts, distance time; run: distance; time)
+- Have a unit test system
+
+
+Additional requirements/adds for future
+---------------------------------------
+- Add support for more sports in database
+- Add tests as inputs to the ATP
+- Add tests to database (be able to determine FTP, lactate threshold, HR, etc) so the athlete knows how to test for these)
+- Add creation of weekly training plans (app should see which week of the microcyle the athlete is in, his weaknesses, what he would like to work on and suggest the training sessions for that week)
+- Add different types of periodization (undulating and reverse linear)
+- Add athlete diary (I, first need to know what to log. Probably resting HR, weight,...)
+- Add explanations for HR zones
+- Add basic explanation for types of weeks so the athlete can select appropriate training sessions from the training database)
+- Add workout builder
+- Add possibility to recalculate ATP if the weekly hours are no satisfied (due to injury, set backs, unplanned travels, etc)
+- Add option to send training session to different other apps (connect, training peaks, strava, etc)
+
+
+Inputs
+------
+- Set beggining of year
+- Mesocyle type 3+1 / 2+1
+- Races in year and types for these races (A/B/C)
+- Time per week to train
+
+
+Get training sessions from
+--------------------------
+Triathlete training bible
+Book on training sessions from amazon
+Apps
+	My Asics
+Online
