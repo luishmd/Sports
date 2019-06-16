@@ -49,10 +49,10 @@ def get_dic_week_activities_names_paths(root_dir, week):
      value -> C:/Users/luisd/Google Drive/Treinos/Activities/W14 - 3 Apr - 9 Apr/Running/activity_1660306289.tcx
     """
     week_activities_names_paths = {}
-    week_path = root_dir + week
+    week_path = lib_path.join_paths(root_dir, week)
     sports_types = get_sports_types(root_dir, week)
     for sport_type in sports_types:
-        path = week_path + sport_type + "/"
+        path = lib_path.join_paths(week_path, sport_type)
         sport_activities = lib_file.get_files_complete_names_with_extensions(path)
         for sport_activity in sport_activities:
             start_datetime_obj = get_activity_start_datetime(sport_activity)
@@ -237,7 +237,7 @@ def get_data_activity_laps(activity_name_path):
     return [total_time_lap_dic, total_distance_lap_dic, total_calories_lap_dic, heart_rate_profile_lap_dic, speed_profile_lap_dic, cadence_profile_lap_dic, latitude_profile_lap_dic, longitude_profile_lap_dic, altitude_profile_lap_dic, distance_profile_lap_dic]
 
 
-def calc_savings_week_commute(root_dir, week, journey_price_GBP=1.5, travelcard_cap=4.5):
+def calc_savings_week_commute(root_dir, week, journey_price=1.5, travelcard_cap=4.5):
     """
     Function that calculates the savings for commuting on a bike during a week
     """
@@ -257,7 +257,7 @@ def calc_savings_week_commute(root_dir, week, journey_price_GBP=1.5, travelcard_
     # Calculate savings
     dates = commute_counter_dic.keys()
     for date in dates:
-        commute_savings_dic[date] = commute_counter_dic[date]*journey_price_GBP
+        commute_savings_dic[date] = commute_counter_dic[date]*journey_price
         if commute_savings_dic[date] > travelcard_cap:
             commute_savings_dic[date] = travelcard_cap
         total_savings += commute_savings_dic[date]

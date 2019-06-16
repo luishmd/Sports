@@ -2,3 +2,18 @@
 
 activities path: C:\Users\Luis\Google Drive\Sports\2017_18\Activities\
 week: W47 - 20 Aug - 26 Aug
+
+heart_rate_dic:
+  Z1: [84,142]
+  Z2: [143,152]
+  Z3: [153,159]
+  Z4: [160,167]
+  Z5: [168,184]
+
+activity_name: Running on 25 August 2018 at 08:09:23
+
+delta_from_end_min: 20
+
+journey_price: 1.5 # GBP
+
+travelcard_cap: 4.5 # GBP

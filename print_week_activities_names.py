@@ -1,4 +1,8 @@
-__author__ = 'luisd'
+# Metadata
+#=========
+__author__ = "Luis Domingues"
+__maintainer__ = "Luis Domingues"
+__email__ = "luis.hmd@gmail.com"
 
 #----------------------------------------------------------------------------------------
 # Notes
@@ -8,19 +12,37 @@ __author__ = 'luisd'
 #----------------------------------------------------------------------------------------
 # IMPORTS
 #----------------------------------------------------------------------------------------
-import lib_directory_ops as lib_dir
 import lib_sport_printing as lib_print
+import lib_path_ops
+import yaml
+import sys
+import os
+
+#----------------------------------------------------------------------------------------
+# PRE-CALCULATIONS
+#----------------------------------------------------------------------------------------
+# Get inputs
+root_dir = os.getcwd()
+root_dir = root_dir+'/'
 
 #----------------------------------------------------------------------------------------
 # INPUTS
 #----------------------------------------------------------------------------------------
-username = lib_dir.getpass.getuser()
-root_dir = "C:/Users/" + username + "/Google Drive/Treinos/2016_17/Activities/"
+try:
+    input_file = lib_path_ops.join_paths(root_dir, 'inputs/inputs.yaml')
+    with open(input_file, 'r') as ymlfile:
+        cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
-week = "W32 - 7 Aug - 13 Aug/"
+    activities_dir = cfg['activities path']
+    week = cfg['week']
+    print("Loaded inputs successfully.")
+except:
+    print("Failed to load inputs. Exiting...")
+    sys.exit(1)
 
 #----------------------------------------------------------------------------------------
 # MAIN
 #----------------------------------------------------------------------------------------
-# Print week activities
-lib_print.print_week_activities_names(root_dir, week)
+if __name__ == "__main__":
+    # Print week activities
+    lib_print.print_week_activities_names(activities_dir, week)
