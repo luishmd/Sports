@@ -1,18 +1,12 @@
 # Metadata
 #=========
-__author__ = 'Luis Domingues'
+__author__ = "Luis Domingues"
+__maintainer__ = "Luis Domingues"
+__email__ = "luis.hmd@gmail.com"
 
 # Description
 #============
 # Library that provides string operations
-
-# Notes
-#======
-#
-
-# Known issues/enhancements
-#==========================
-#
 
 #----------------------------------------------------------------------------------------
 # IMPORTS
@@ -24,6 +18,7 @@ __author__ = 'Luis Domingues'
 # INPUTS
 #----------------------------------------------------------------------------------------
 include_char_list = ["-", " ", "_", ".", "!"]
+
 
 #----------------------------------------------------------------------------------------
 # FUNCTIONS

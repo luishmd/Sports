@@ -1,18 +1,13 @@
 # Metadata
 #=========
-__author__ = 'Luis Domingues'
+__author__ = "Luis Domingues"
+__maintainer__ = "Luis Domingues"
+__email__ = "luis.hmd@gmail.com"
 
 # Description
 #============
 # Library that provides path operations
 
-# Notes
-#======
-#
-
-# Known issues/enhancements
-#==========================
-#
 
 #----------------------------------------------------------------------------------------
 # IMPORTS

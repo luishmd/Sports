@@ -1,18 +1,13 @@
 # Metadata
 #=========
-__author__ = 'Luis Domingues'
+__author__ = "Luis Domingues"
+__maintainer__ = "Luis Domingues"
+__email__ = "luis.hmd@gmail.com"
 
 # Description
 #============
 # Library that provides sport-related operations
 
-# Notes
-#======
-#
-
-# Known issues/enhancements
-#==========================
-#
 
 #----------------------------------------------------------------------------------------
 # IMPORTS
@@ -24,7 +19,6 @@ import lib_datetime_ops as lib_datetime
 import lib_sport_formatting as lib_format
 import lib_general_ops as lib_general
 import conversion_lib as lib_conv
-
 
 
 #----------------------------------------------------------------------------------------
