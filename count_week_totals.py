@@ -1,30 +1,48 @@
-__author__ = 'luisd'
+# Metadata
+#=========
+__author__ = "Luis Domingues"
+__maintainer__ = "Luis Domingues"
+__email__ = "luis.hmd@gmail.com"
 
-#----------------------------------------------------------------------------------------
-# Notes
-#----------------------------------------------------------------------------------------
-# This could be converted into one function in lib_sports called count_week_totals
 
 #----------------------------------------------------------------------------------------
 # IMPORTS
 #----------------------------------------------------------------------------------------
 import lib_sport_ops as lib_sports
-import lib_directory_ops as lib_dir
 import lib_sport_printing as lib_print
+import lib_path_ops
+import yaml
+import sys
+import os
+
+#----------------------------------------------------------------------------------------
+    # PRE-CALCULATIONS
+#----------------------------------------------------------------------------------------
+# Get inputs
+root_dir = os.getcwd()
+root_dir = root_dir+'/'
 
 #----------------------------------------------------------------------------------------
 # INPUTS
 #----------------------------------------------------------------------------------------
-username = lib_dir.getpass.getuser()
-root_dir = "C:/Users/" + username + "/Google Drive/Treinos/Activities/"
+try:
+    input_file = lib_path_ops.join_paths(root_dir, 'inputs/inputs.yaml')
+    with open(input_file, 'r') as ymlfile:
+        cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
 
-week = "W47 - 20 Aug - 26 Aug/"
+    activities_dir = cfg['activities path']
+    week = cfg['week']
+    print("Loaded inputs successfully.")
+except:
+    print("Failed to load inputs. Exiting...")
+    sys.exit(1)
 
 #----------------------------------------------------------------------------------------
 # MAIN
 #----------------------------------------------------------------------------------------
-[total_time, total_distance, total_calories, heart_rate_profile, speed_profile, cadence_profile, latitude_profile, longitude_profile, altitude_profile, distance_profile] = lib_sports.get_data_week_activities(root_dir, week)
+if __name__ == "__main__":
+    [total_time, total_distance, total_calories, heart_rate_profile, speed_profile, cadence_profile, latitude_profile, longitude_profile, altitude_profile, distance_profile] = lib_sports.get_data_week_activities(activities_dir, week)
 
-# Printing results
-lib_print.print_total_time(total_time)
-#lib_print.print_total_distance(total_distance)
+    # Printing results
+    lib_print.print_total_time(total_time)
+    #lib_print.print_total_distance(total_distance)

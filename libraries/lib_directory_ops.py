@@ -45,7 +45,7 @@ def listdir(path):
     try:
         result = os.listdir(path)
     except:
-        print("Could not open <%s>" %path)
+        print("Could not open <{}>".format(path))
     return result
 
 

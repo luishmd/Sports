@@ -29,7 +29,7 @@ def is_file_empty(file, verbose=False):
             result = True
     except:
         if verbose:
-            print("Invalid file <%s>" %str(file))
+            print("Invalid file <{}>".format(str(file)))
         else:
             pass
     return result
@@ -53,12 +53,12 @@ def get_files_complete_names_with_extensions(dir_path, file_extensions=[".*"], v
                     result.append(file_complete_name)
         except AssertionError:
             if verbose:
-                print("Directory <%s> is empty" %dir_path)
+                print("Directory <{}> is empty".format(dir_path))
             else:
                 pass
     except:
         if verbose:
-            print("Could not find directory <%s>" %dir_path)
+            print("Could not find directory <{}>".format(dir_path))
         else:
             pass
     return result
@@ -81,12 +81,12 @@ def get_files_names_without_extensions(dir_path, file_extensions=[".*"], verbose
                     result.append(name)
         except AssertionError:
             if verbose:
-                print("Directory <%s> is empty" %dir_path)
+                print("Directory <{}> is empty".format(dir_path))
             else:
                 pass
     except:
         if verbose:
-            print("Could not find directory <%s>" %dir_path)
+            print("Could not find directory <{}>".format(dir_path))
         else:
             pass
     return result
@@ -104,7 +104,7 @@ def get_files_pointers(dir_path, file_extensions=[".*"], verbose=False):
             pointers_list.append(f)
         except IOError:
             if verbose:
-                print("Could not open file: <%s>" %str(file))
+                print("Could not open file: <{}>".format(str(file)))
             else:
                 pass
     return pointers_list
@@ -119,7 +119,7 @@ def write_to_file(file_object, what_to_write, verbose=False):
         return file_object
     except:
         if verbose:
-            print("Could not write to file <%s>." %file_object)
+            print("Could not write to file <{}>.".format(file_object))
         else:
             pass
         return 1
@@ -134,7 +134,7 @@ def open_file(path, mode, verbose=False):
         return f
     except:
         if verbose:
-            print("Could not open file <%s>." % path)
+            print("Could not open file <{}>.".format(path))
         else:
             pass
         return 1
@@ -148,7 +148,7 @@ def close_file(file_handle, verbose=False):
         return 0
     except:
         if verbose:
-            print ("Could not close file <%s>." % str(file_handle))
+            print ("Could not close file <{}>.".format(str(file_handle)))
         else:
             pass
         return 1
@@ -162,7 +162,7 @@ def delete_file(path, verbose=False):
             return 0
         except:
             if verbose:
-                print("Could not delete file <%s>." % path)
+                print("Could not delete file <{}>.".format(path))
             else:
                 pass
             return 1

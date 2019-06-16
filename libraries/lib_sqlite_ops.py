@@ -49,7 +49,7 @@ def connect_to_database(database_path, database_name):
         con = lib_sql.connect(path)
         cur = con.cursor()
     except lib_sql.Error:
-        print("Could not connect to database <%s>." % path)
+        print("Could not connect to database <{}>.".format(path))
         sys.exit(1)
     return [con, cur]
 
@@ -62,7 +62,7 @@ def close_database(con):
         con.close()
         return 0
     else:
-        print("Could not close database <%s>." % str(con))
+        print("Could not close database <{}>.".format(str(con)))
         return 1
 
 
@@ -74,7 +74,7 @@ def delete_database(path):
         lib_file.delete_file(path)
         return 0
     else:
-        print("Could not delete database <%s>." % path)
+        print("Could not delete database <{}>.".format(path))
         return 1
 
 

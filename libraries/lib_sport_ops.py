@@ -14,6 +14,7 @@ __email__ = "luis.hmd@gmail.com"
 #----------------------------------------------------------------------------------------
 import lib_file_ops as lib_file
 import lib_directory_ops as lib_dir
+import lib_path_ops as lib_path
 import lib_sport_xml_ops as lib_xml
 import lib_datetime_ops as lib_datetime
 import lib_sport_formatting as lib_format
@@ -32,10 +33,10 @@ def get_dic_week_activities(root_dir, week):
         sport_activities - list containing the full path for each activity of a given type
     """
     week_activities_dic = {}
-    week_path = root_dir + week
+    week_path = lib_path.join_paths(root_dir, week)
     sports_types = get_sports_types(root_dir, week)
     for sport_type in sports_types:
-        path = week_path + sport_type + "/"
+        path = lib_path.join_paths(week_path, sport_type)
         sport_activities = lib_file.get_files_complete_names_with_extensions(path)
         week_activities_dic[str(sport_type)] = sport_activities
     return week_activities_dic
@@ -63,7 +64,7 @@ def get_sports_types(root_dir, week):
     """
     Function that returns the sports types (correspond to the directory names for a given week)
     """
-    week_path = root_dir + week
+    week_path = lib_path.join_paths(root_dir, week)
     sports_types = lib_dir.listdir(week_path)
     return sports_types
 

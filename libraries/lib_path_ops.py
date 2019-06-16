@@ -47,12 +47,10 @@ def get_relative_path(path, start_path=""):
 
 
 def get_root_path(abs_path, base_path):
-    """
-    Function that returns the root path of an absolute path:
-        abs_path = C:\Users\luisd\Repos\svn_coding_repo\trunk\training\libraries
-        base_path = ./trunk/training/databases
-        return = C:\Users\luisd\Repos\svn_coding_repo
-    """
+    #Function that returns the root path of an absolute path:
+    #    abs_path = 'C:\Users\luisd\Repos\svn_coding_repo\trunk\training\libraries'
+    #    base_path = ./trunk/training/databases
+    #    return = 'C:\\Users\\luisd\\Repos\\svn_coding_repo'
     root_path_list = abs_path.split(get_relative_path(base_path))
     return get_abs_path(root_path_list[0])
 

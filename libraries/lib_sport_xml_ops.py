@@ -34,7 +34,7 @@ def parse_tree(input_xml):
         tree = etree.parse(input_xml)
         root = tree.getroot()
     except:
-        print("Could not parse XML tree for file <%s> (hint: possibly the model does not have a dialog)." %str(input_xml))
+        print("Could not parse XML tree for file <{}>".format(str(input_xml)))
     return [tree, root]
 
 
