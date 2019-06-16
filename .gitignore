@@ -1,0 +1,8 @@
+# Directories
+outputs/*/
+
+# Python compiled files
+*.pyc
+
+# Office Temp Files
+~$
