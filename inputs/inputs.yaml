@@ -1,7 +1,7 @@
 # For a description of each parameter and their units of measurement, please check the README.md.
 
-activities path: C:\Users\Luis\Google Drive\Sports\2017_18\Activities\
-week: W47 - 20 Aug - 26 Aug
+activities path: C:\Users\Luis\Documents\GitHub_repos\Sports\trunk\sample_data\
+week: W37 - 11 Jun - 17 Jun
 
 heart_rate_dic:
   Z1: [84,142]
@@ -10,7 +10,7 @@ heart_rate_dic:
   Z4: [160,167]
   Z5: [168,184]
 
-activity_name: Running on 25 August 2018 at 08:09:23
+activity_name: Running on 16 June 2018 at 08:27:26
 
 delta_from_end_min: 20
 
